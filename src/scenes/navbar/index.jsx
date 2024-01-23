@@ -30,8 +30,8 @@ const Navbar = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector((state)=>state.user);
-    const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+    const user = useSelector((state) => state.user);
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const theme = useTheme();
     const neutralLight = theme.palette.neutral.light;
@@ -40,7 +40,7 @@ const Navbar = () => {
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
 
-    const fullName = `${user.firstName} ${user.lastName}`;
+    const fullName = '나중에 보장(src/scenes/navbar/index.jsx)';//`${user.firstName} ${user.lastName}`;
 
     return <FlexBetween padding="1rem 6%" backgroundColor={alt}>
         <FlexBetween gap="1.75rem">
@@ -96,10 +96,10 @@ const Navbar = () => {
                             p:"0.25rem 1rem",
                             "& .MuiSvgIcon-root" : {
                                 pr : "0.25rem",
-                                width : "3rem"
+                                width : "3rem",
                             },
                             "& .MuiSelect-select:focus" : {
-                                backgroundColor : neutralLight
+                                backgroundColor : neutralLight,
                             },
                         }}
                         input={<InputBase/>}
@@ -108,7 +108,7 @@ const Navbar = () => {
                             <Typography>{fullName}</Typography>
                         </MenuItem>
                         <MenuItem onClick={()=>dispatch(setLogout())}>
-                            <Typography>Log Out</Typography>
+                            로그 아웃
                         </MenuItem>
                     </Select>
                 </FormControl>
@@ -130,7 +130,7 @@ const Navbar = () => {
                 height = "100%"
                 zIndex="10"
                 maxWidth="500px"
-                maxHeight="300px"
+                minWidth="300px"
                 backgroundColor={background}
             >
                 {/* CLOSE ICON */}
@@ -144,7 +144,6 @@ const Navbar = () => {
                     >
                         <Close/>
                     </IconButton>
-
                 </Box>
 
                 {/* MENU ITEMS */}
@@ -175,10 +174,10 @@ const Navbar = () => {
                                 p:"0.25rem 1rem",
                                 "& .MuiSvgIcon-root" : {
                                     pr : "0.25rem",
-                                    width : "3rem"
+                                    width : "3rem",
                                 },
                                 "& .MuiSelect-select:focus" : {
-                                    backgroundColor : neutralLight
+                                    backgroundColor : neutralLight,
                                 },
                             }}
                             input={<InputBase/>}
@@ -187,12 +186,11 @@ const Navbar = () => {
                                 <Typography>{fullName}</Typography>
                             </MenuItem>
                             <MenuItem onClick={()=>dispatch(setLogout())}>
-                                <Typography>Log Out</Typography>
+                                로그 아웃
                             </MenuItem>
                         </Select>
                     </FormControl>
                 </FlexBetween>
-
             </Box>
         )}
     </FlexBetween>
